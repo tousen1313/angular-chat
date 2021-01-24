@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-chat-2adcd": {
+      "hosting": {
+        "angular-chat": [
+          "angular-chat-2adcd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "angular-chat": "angular-chat-2adcd"
+  }
+}
