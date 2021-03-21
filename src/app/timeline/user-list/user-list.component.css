@@ -30,3 +30,16 @@
   position: relative;
   margin-right: 5px;
 }
+
+.icon {
+  display: block;
+  background-color: #35b8c2;
+  width: 30px;
+  height: 35px;
+  padding-top: 15px;
+  border-radius: .3rem;
+  color: #fff;
+  font-size: 30px;
+  line-height: 2px;
+  text-align: center;
+}

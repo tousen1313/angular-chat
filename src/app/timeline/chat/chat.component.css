@@ -11,6 +11,11 @@
   margin-bottom: 30px;
 }
 
+.chat-timeline {
+  height: 740px;
+  overflow: auto;
+}
+
 .chat-container {
   display: flex;
   justify-content: space-between;

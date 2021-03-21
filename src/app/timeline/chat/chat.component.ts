@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { Comment } from '../../core/models/comment';
 import { User } from '../../core/models/user';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { isEmpty, defer } from 'lodash'
 
 @Component({
   selector: 'ac-chat',
@@ -49,10 +50,15 @@ export class ChatComponent implements OnInit {
       );
   }
 
-  addComment(comment: string): void {
-    if (comment) {
+  addComment(comment: string, event?: any): boolean {
+    // shift ＋ enterのみ改行
+    if(event.shiftKey === true && event.key === 'Enter') {
+      return true
+    }
+    if (comment && isEmpty(event) || comment && event.key === 'Enter') {
       this.commentsRef.push(new Comment({ user: this.currentUser, message: comment }));
       this.comment = '';
+      return false
     }
   }
 

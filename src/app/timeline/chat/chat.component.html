@@ -2,7 +2,7 @@
   <div class="welcome">
     <div class="jumbotron jumbotron-fluid p-5 border border-secondary bg-light">
       <div class="container">
-        <h1 class="display-3">ChatApp!</h1>
+        <h1 class="display-3">Angular Chat!</h1>
         <p class="w-100">
           <a routerLink="/signup">新規登録</a>、または<a routerLink="/login">ログイン</a>して始めましょう！
         </p>
@@ -12,9 +12,7 @@
 </ng-template>
 
 <div *ngIf="currentUser$ | async; else welcome" class="chat-container">
-  <ac-user-list>
-    ★
-  </ac-user-list>
+  <ac-user-list></ac-user-list>
 
   <div class="content">
     <section class="chat">
@@ -80,6 +78,7 @@
           <textarea
             [(ngModel)]="comment"
             name="comment"
+            (keydown)="addComment(comment, $event)"
             class="form-control"
             placeholder="メッセージを入力"
             tabindex="1"
